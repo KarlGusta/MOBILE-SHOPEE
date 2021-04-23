@@ -10,4 +10,34 @@
     .owl-carousel .item .product img:hover{
         transform: scale(1.1);
     }
+
+    /* Button previous and Button next*/
+    .owl-carousel .owl-nav button{
+        position: absolute;
+        top: 30%;
+        outline: none;
+    }
+
+    .owl-carousel .owl-nav button.owl-prev{
+        left: 0;
+    }
+
+    .owl-carousel .owl-nav button.owl-prev span{
+        font-size: 35px;
+        color: $color-primary;
+        margin-left: -4rem;
+        padding: 0 1rem;
+    }
+
+    /* Next button */
+    .owl-carousel .owl-nav button.owl-next{
+        right:0;
+    }
+
+    .owl-carousel .owl-nav button.owl-next span{
+        font-size: 35px;
+        color: $color-primary;
+        margin-right: -4rem;
+        padding: 0 1rem;
+    }
 }
