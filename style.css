@@ -83,20 +83,21 @@ button:focus {
 #top-sale .owl-carousel .owl-nav button.owl-prev {
   left: 0;
 }
-#top-sale .owl-carousel .owl-nav button.owl-prev span {
+#top-sale .owl-carousel .owl-nav button.owl-prev span,
+#top-sale .owl-carousel .owl-nav button.owl-next span {
   font-size: 35px;
   color: #003859;
   margin-left: -4rem;
   padding: 0 1rem;
 }
+#top-sale .owl-carousel .owl-nav button.owl-prev span {
+  margin-left: -4rem;
+}
 #top-sale .owl-carousel .owl-nav button.owl-next {
   right: 0;
 }
 #top-sale .owl-carousel .owl-nav button.owl-next span {
-  font-size: 35px;
-  color: #003859;
   margin-right: -4rem;
-  padding: 0 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

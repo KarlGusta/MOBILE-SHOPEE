@@ -22,11 +22,16 @@
         left: 0;
     }
 
-    .owl-carousel .owl-nav button.owl-prev span{
+    .owl-carousel .owl-nav button.owl-prev span,
+    .owl-carousel .owl-nav button.owl-next span{
         font-size: 35px;
         color: $color-primary;
         margin-left: -4rem;
         padding: 0 1rem;
+    }
+
+    .owl-carousel .owl-nav button.owl-prev span{
+        margin-left: -4rem;
     }
 
     /* Next button */
@@ -35,9 +40,6 @@
     }
 
     .owl-carousel .owl-nav button.owl-next span{
-        font-size: 35px;
-        color: $color-primary;
         margin-right: -4rem;
-        padding: 0 1rem;
     }
 }
