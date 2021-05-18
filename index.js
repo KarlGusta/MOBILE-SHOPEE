@@ -43,7 +43,7 @@ $(document).ready(function () {
     $("#new-phones .owl-carousel").owlCarousel({
         loop: true,
         nav: false,
-        dots: false,
+        dots: true,
         responsive: {
             0: {
                 items: 1
