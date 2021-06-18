@@ -72,4 +72,20 @@ $(document).ready(function () {
         }
     });
 
+    // Product Quantity Section
+    let $qty_up = $(".qty .qty-up");
+    let $qty_down = $(".qty .qty-down");
+
+    let $input = $(".qty .qty-input");
+    
+    // click on qty up button
+    $qty_up.click(function(){
+        if($input.val()>=1 && $input.val()<=9){
+            $input.val(function(i, oldval){
+                return ++oldval;
+            })
+        }
+    });
+
+
 });
