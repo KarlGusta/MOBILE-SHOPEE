@@ -88,4 +88,15 @@ $(document).ready(function () {
     });
 
 
+    // Click on qty down button
+    $qty_down.click(function(){
+        if($input.val()>1 && $input.val()<=10){
+            $input.val(function(i, oldval){
+                return --oldval;
+            })
+        }
+    });
+
+    
+
 });
