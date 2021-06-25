@@ -112,10 +112,10 @@
                                 <!--Product Qty-->
                                 <div class="qty d-flex pt-2">
                                     <div class="d-flex font-rale w-25">
-                                        <button class="qty-up border bg-light"><i class="fas fa-angle-up"></i></button>
+                                        <button class="qty-up border bg-light" data-id="prod1"><i class="fas fa-angle-up"></i></button>
                                         <input type="text" class="qty-input border px-2 w-100 bg-light" disabled
-                                            value="1" placeholder="1">
-                                        <button class="qty-down border bg-light"><i
+                                            value="1" placeholder="1" data-id="prod1">
+                                        <button class="qty-down border bg-light" data-id="prod1"><i
                                                 class="fas fa-angle-down"></i></button>
                                     </div>
                                     <button class="btn font-baloo text-danger px-3 border-right">Delete</button>
@@ -161,8 +161,10 @@
                                 <div class="qty d-flex pt-2">
                                     <div class="d-flex font-rale w-25">
                                         <button class="qty-up border bg-light"><i class="fas fa-angle-up"></i></button>
-                                        <input type="text" class="qty-input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
-                                        <button class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
+                                        <input type="text" class="qty-input border px-2 w-100 bg-light" disabled
+                                            value="1" placeholder="1">
+                                        <button class="qty-down border bg-light"><i
+                                                class="fas fa-angle-down"></i></button>
                                     </div>
                                     <button class="btn font-baloo text-danger px-3 border-right">Delete</button>
                                     <button class="btn font-baloo text-danger px-3">Save for Later</button>
@@ -180,7 +182,21 @@
                         </div>
                         <!--Cart Item-->
                     </div>
-                    <div class="col-sm-3"></div>
+
+                    <!--Subtotal Section-->
+                    <div class="col-sm-3">
+                        <div class="sub-total border text-center mt-2">
+                            <h6 class="font-size-12 font-rale text-success py-3"><i class="fas fa-check"></i>Your order
+                                is eligible for delivery.</h6>
+                            <div class="border-top py-4">
+                                <h5 class="font-baloo font-size-20">Subtotal(2 items): &nbsp; <span
+                                        class="text-danger">$</span><span class="text-danger" id="deal-price">152</span>
+                                </h5>
+                                <button type="submit" class="btn btn-warning mt-3">Proceed to Buy</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--!Subtotal Section-->
                 </div>
                 <!--!Shopping Cart Items-->
             </div>
@@ -189,7 +205,7 @@
 
         <!-- New Phones -->
         <section id="new-phones">
-            <div class="container">
+            <div class="container py-5">
                 <h4 class="font-rubik font-size-20">New Phones</h4>
                 <hr>
                 <!--Owl Carousel-->
