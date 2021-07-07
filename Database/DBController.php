@@ -14,5 +14,6 @@ public $con = null;
 public function __construct(){
     $this->con = mysql_connect($this->host, $this->user, $this->password, $this->database);
 }
+
 }
 
