@@ -28,6 +28,13 @@
 
     <!--Custom CSS-->
     <link rel="stylesheet" href="style.css">
+    
+    <?php     
+    // require mysql connection
+    require('Database/DBController.php');
+    
+    ?>	
+
 
 </head>
 

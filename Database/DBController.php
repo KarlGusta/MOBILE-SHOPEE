@@ -12,8 +12,13 @@ public $con = null;
 
 //Call  constructor
 public function __construct(){
-    $this->con = mysql_connect($this->host, $this->user, $this->password, $this->database);
+    $this->con = mysqli_connect($this->host, $this->user, $this->password, $this->database);
+    if($this->con->connect_error){
+        echo "Fail".$this->con->connect_error;
+    }
+}
 }
 
-}
+//DBController Object
 
+$db = new DBController();
