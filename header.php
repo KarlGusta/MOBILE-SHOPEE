@@ -30,9 +30,8 @@
     <link rel="stylesheet" href="style.css">
     
     <?php     
-    // require mysql connection
-    require('Database/DBController.php');
-    
+    // require functions.php file
+    require('functions.php');
     ?>	
 
 
