@@ -112,7 +112,7 @@ CREATE TABLE `wishlist` (
 --
 
 ALTER TABLE `cart`
-    ADD PRIMARY KEY (`item_id`);
+    ADD PRIMARY KEY (`cart_id`);
 
 --
 -- Indexes for table `product`
