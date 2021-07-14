@@ -10,7 +10,7 @@ class Product {
         $this->db = $db;
     }
 
-    // Fetch product data using getData method
+    // Fetch product data using getData method //POWERFUL METHOD POWERFUL METHOD TO GET THE DATA FROM THE TABLE AND DISPLAY IT
 
     public function getData($table = 'product'){
         $result = $this->db->con->query("SELECT * FROM {$table}");
