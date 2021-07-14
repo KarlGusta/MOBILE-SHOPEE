@@ -9,6 +9,7 @@
 
         <!--Owl Carousel-->
         <div class="owl-carousel owl-theme">
+            <?php foreach ($product_shuffle as $item) {?>
             <div class="item py-2">
                 <div class="product font-rale">
                     <a href="#"><img src="./assets/products/1.png" alt="product1" class="img-fluid"></a>
@@ -28,6 +29,7 @@
                     </div>
                 </div>
             </div>
+            <?php } // Closing foreach function?>
         </div>
         <!--! Owl Carousel-->
     </div>
