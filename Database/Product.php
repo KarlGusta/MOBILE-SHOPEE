@@ -13,7 +13,7 @@ class Product {
     // Fetch product data using getData method
 
     public function getData($table = 'product'){
-        $result = $this->db->con->query(query: "SELECT * FROM {$table}");
+        $result = $this->db->con->query("SELECT * FROM {$table}");
 
         $resultArray = array();
 
@@ -21,5 +21,7 @@ class Product {
         while( $item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             $resultArray[] = $item;
         }
+
+        return $resultArray;
     }
 }
