@@ -1,6 +1,11 @@
 <!--$Product_shuffle is not up here.--> 
 <!--We can use the top-sale variables here because they are in the same index.php file--> 
 
+<?php 
+    $brand = array_map(function($pro){ return $pro['item_brand'];}, $product_shuffle);
+
+    print_r($brand);
+?>
 
 <!-- Special Price -->
 <section id="special-price">
