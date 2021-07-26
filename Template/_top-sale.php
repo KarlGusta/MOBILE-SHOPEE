@@ -26,7 +26,10 @@
                         <div class="price py-2">
                             <span><?php echo $item['item_price'] ?? '0'; ?></span>
                         </div>
-                        <button type="submit" class="btn btn-warning">Add to Cart</button>
+                        <form method="post">
+                            <input type="hidden">
+                            <button type="submit" class="btn btn-warning">Add to Cart</button>
+                        </form>
                     </div>
                 </div>
             </div>
