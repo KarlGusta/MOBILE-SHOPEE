@@ -1,6 +1,12 @@
 <?php 
     $product_shuffle = $product->getData();
     shuffle($product_shuffle); // This shuffles the array to give random values
+
+    // request method post
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        // call method addToCart
+        $cart->addToCart()
+    }
 ?>
 
 <!-- Top sale -->
@@ -27,8 +33,9 @@
                             <span><?php echo $item['item_price'] ?? '0'; ?></span>
                         </div>
                         <form method="post">
-                            <input type="hidden">
-                            <button type="submit" class="btn btn-warning">Add to Cart</button>
+                            <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
+                            <input type="hidden" name="user_id" value="<?php echo 1;?>">
+                            <button type="submit" name="top_sale_submit" class="btn btn-warning">Add to Cart</button>
                         </form>
                     </div>
                 </div>
