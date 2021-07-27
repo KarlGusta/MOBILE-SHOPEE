@@ -5,7 +5,7 @@
     // request method post
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         // call method addToCart
-        $cart->addToCart()
+        $cart->addToCart($_POST['user_id'],$_POST['item_id']);
     }
 ?>
 
