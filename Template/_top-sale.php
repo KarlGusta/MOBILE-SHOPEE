@@ -1,5 +1,5 @@
 <?php 
-    $product_shuffle = $product->getData();
+
     shuffle($product_shuffle); // This shuffles the array to give random values
 
     // request method post
