@@ -1,3 +1,17 @@
+<!--$Product_shuffle is not up here.--> 
+<!--We can use the top-sale variables here because they are in the same index.php file--> 
+
+<?php 
+
+// request method post
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    if(isset($_POST['new_phones_submit'])){
+        // call method addToCart
+        $cart->addToCart($_POST['user_id'],$_POST['item_id']);
+    }
+}
+?>
+
 <!-- New Phones -->
 <section id="new-phones">
     <div class="container">

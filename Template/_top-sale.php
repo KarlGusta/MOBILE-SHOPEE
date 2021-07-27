@@ -4,8 +4,10 @@
 
     // request method post
     if($_SERVER['REQUEST_METHOD'] == "POST"){
-        // call method addToCart
-        $cart->addToCart($_POST['user_id'],$_POST['item_id']);
+        if(isset($_POST['top_sale_submit'])){
+            // call method addToCart
+            $cart->addToCart($_POST['user_id'],$_POST['item_id']);
+        }
     }
 ?>
 
