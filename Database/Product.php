@@ -24,4 +24,7 @@ class Product {
 
         return $resultArray;
     }
+
+    // get product using item id
+    
 }
