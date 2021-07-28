@@ -6,6 +6,10 @@
                 <!--Shopping Cart Items-->
                 <div class="row">
                     <div class="col-sm-9">
+                        <?php 
+                            foreach($product->getData(table: 'cart') as $item):
+                                print_r($item);
+                        ?>
                         <!--Cart item-->
                         <div class="row border-top py-3 mt-3">
                             <div class="col-sm-2">
@@ -53,8 +57,9 @@
 
                         </div>
                         <!--!Cart item-->
-
-
+                        <?php 
+                            endforeach;
+                        ?>
                     </div>
 
                     <!--Subtotal Section-->
