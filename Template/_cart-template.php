@@ -10,16 +10,16 @@
                         foreach ($product->getData('cart') as $item) :
                             // to get the product using the item id
                             $cart = $product->getProduct($item['item_id']);
-                            $subTotal = array_map(function ($item) {
+                            $subTotal[] = array_map(function ($item) {
                         ?>
                                 <!--Cart item-->
                                 <div class="row border-top py-3 mt-3">
                                     <div class="col-sm-2">
-                                        <img src="<?php echo $item['item_image'] ?? './assets/products/1.png';?>" style="height: 120px;" alt="cart1" class="img-fluid">
+                                        <img src="<?php echo $item['item_image'] ?? './assets/products/1.png'; ?>" style="height: 120px;" alt="cart1" class="img-fluid">
                                     </div>
                                     <div class="col-sm-8">
-                                        <h5 class="font-baloo font-size-20"><?php echo $item['item_name'] ?? 'Unknown';?></h5>
-                                        <small>by <?php echo $item['item_brand'] ?? 'Brand'?></small>
+                                        <h5 class="font-baloo font-size-20"><?php echo $item['item_name'] ?? 'Unknown'; ?></h5>
+                                        <small>by <?php echo $item['item_brand'] ?? 'Brand' ?></small>
 
                                         <!--Product rating-->
                                         <div class="d-flex">
@@ -58,8 +58,8 @@
                                 </div>
                                 <!--!Cart item-->
                         <?php
-                            return $item['item_price'];
-                            }, $cart); // closing array_map function
+                                return $item['item_price'];
+                            }, $cart); // closing array_map function   
                         endforeach;
                         print_r($subTotal);
                         ?>
@@ -71,7 +71,7 @@
                             <h6 class="font-size-12 font-rale text-success py-3"><i class="fas fa-check"></i>Your order
                                 is eligible for delivery.</h6>
                             <div class="border-top py-4">
-                                <h5 class="font-baloo font-size-20">Subtotal(2 items): &nbsp; <span class="text-danger">$</span><span class="text-danger" id="deal-price">152</span>
+                                <h5 class="font-baloo font-size-20">Subtotal <?php echo count($subTotal) ?? 0;?> item(s): &nbsp; <span class="text-danger">$</span><span class="text-danger" id="deal-price"><?php echo isset($subTotal) ? $Cart->getSum($subTotal):0; ?></span>
                                 </h5>
                                 <button type="submit" class="btn btn-warning mt-3">Proceed to Buy</button>
                             </div>
