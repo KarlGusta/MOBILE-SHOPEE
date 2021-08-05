@@ -80,6 +80,11 @@ $(document).ready(function () {
     
     // click on qty up button
     $qty_up.click(function(){
+
+        // Change product price using ajax call
+        $.ajax()
+
+
         let $input = $(`.qty-input[data-id='${$(this).data("id")}']`);
         if($input.val()>=1 && $input.val()<=9){
             $input.val(function(i, oldval){
