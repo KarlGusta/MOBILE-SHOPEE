@@ -37,7 +37,14 @@
                         <form method="post">
                             <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
                             <input type="hidden" name="user_id" value="<?php echo 1;?>">
-                            <button type="submit" name="top_sale_submit" class="btn btn-warning">Add to Cart</button>
+                            <?php 
+                            //Check if item id is in the array in the second parameter
+                                if(in_array($item['item_id'], $Cart->getCartItemId($product->getData('cart')) ?? [])){
+                                    echo '<button type="submit" disabled class="btn btn-success">In the Cart</button>';
+                                }else{
+                                    echo '<button type="submit" name="top_sale_submit" class="btn btn-warning">Add to Cart</button>';
+                                }
+                            ?>
                         </form>
                     </div>
                 </div>
