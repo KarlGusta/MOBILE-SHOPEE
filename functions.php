@@ -19,3 +19,5 @@ $product_shuffle = $product->getData();
 
 // Cart object
 $Cart = new Cart($db);
+
+

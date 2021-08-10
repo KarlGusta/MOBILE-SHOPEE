@@ -45,9 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <!--Product Qty-->
                                 <div class="qty d-flex pt-2">
                                     <div class="d-flex font-rale w-25">
-                                        <button class="qty-up border bg-light" data-id="<?php echo $item['item_id'] ?? 0;?>"><i class="fas fa-angle-up"></i></button>
-                                        <input type="text" class="qty-input border px-2 w-100 bg-light" disabled value="1" placeholder="1" data-id="<?php echo $item['item_id'] ?? 0;?>">
-                                        <button class="qty-down border bg-light" data-id="<?php echo $item['item_id'] ?? 0;?>"><i class="fas fa-angle-down"></i></button>
+                                        <button class="qty-up border bg-light" data-id="<?php echo $item['item_id'] ?? 0; ?>"><i class="fas fa-angle-up"></i></button>
+                                        <input type="text" class="qty-input border px-2 w-100 bg-light" disabled value="1" placeholder="1" data-id="<?php echo $item['item_id'] ?? 0; ?>">
+                                        <button class="qty-down border bg-light" data-id="<?php echo $item['item_id'] ?? 0; ?>"><i class="fas fa-angle-down"></i></button>
                                     </div>
                                     <form method="post">
                                         <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <!--Product Price-->
                             <div class="col-sm-2 text-right">
                                 <div class="font-size-20 text-danger font-baloo">
-                                    $<span class="product_price" data-id="<?php echo $item['item_id'] ?? 0;?>"><?php echo $item['item_price'] ?? 0; ?></span>
+                                    $<span class="product_price" data-id="<?php echo $item['item_id'] ?? 0; ?>"><?php echo $item['item_price'] ?? 0; ?></span>
                                 </div>
                             </div>
                             <!--!Product Price-->
