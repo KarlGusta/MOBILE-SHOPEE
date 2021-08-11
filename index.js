@@ -77,62 +77,80 @@ $(document).ready(function () {
     let $qty_down = $(".qty .qty-down");
     let $deal_price = $("#deal-price");
     //let $input = $(".qty .qty-input");
-    
+
     // click on qty up button
-    $qty_up.click(function(){
+    $qty_up.click(function () {
 
         let $input = $(`.qty-input[data-id='${$(this).data("id")}']`);
         let $price = $(`.product_price[data-id='${$(this).data("id")}']`);
 
 
         // Change product price using ajax call
-        $.ajax({url:"Template/ajax.php",type:'post',data:{itemid: $(this).data("id")}, success:function(result){
-            let obj = JSON.parse(result);
-            let item_price = obj[0]['item_price'];
+        $.ajax({
+            url: "Template/ajax.php",
+            type: 'post',
+            data: {
+                itemid: $(this).data("id")
+            },
+            success: function (result) {
+                let obj = JSON.parse(result);
+                let item_price = obj[0]['item_price'];
 
-            if($input.val() >= 1 && $input.val() <= 9){
-                $input.val(function(i, oldval){
-                    return ++oldval;
-                });
+                if ($input.val() >= 1 && $input.val() <= 9) {
+                    $input.val(function (i, oldval) {
+                        return ++oldval;
+                    });
+
+                    // increase price of the product
+                    $price.text(parseInt(item_price * $input.val()).toFixed(2));
+
+                    // set subtotal price
+                    let subtotal = parseInt($deal_price.text()) + parseInt(item_price);
+                    $deal_price.text(subtotal.toFixed(2));
+                }
+
+
             }
-
-            // increase price of the product
-            $price.text(parseInt(item_price * $input.val()).toFixed(2));
-
-            // set subtotal price
-             let subtotal = parseInt($deal_price.text()) + parseInt(item_price);
-             $deal_price.text(subtotal.toFixed(2));
-        }}); // closing ajax request
+        }); // closing ajax request
 
     });
 
 
     // Click on qty down button
-    $qty_down.click(function(){
-        
+    $qty_down.click(function () {
+
         let $input = $(`.qty-input[data-id='${$(this).data("id")}']`);
         let $price = $(`.product_price[data-id='${$(this).data("id")}']`);
 
         // Change product price using ajax call
-        $.ajax({url:"Template/ajax.php",type:'post',data:{itemid: $(this).data("id")}, success:function(result){
-            let obj = JSON.parse(result);
-            let item_price = obj[0]['item_price'];
+        $.ajax({
+            url: "Template/ajax.php",
+            type: 'post',
+            data: {
+                itemid: $(this).data("id")
+            },
+            success: function (result) {
+                let obj = JSON.parse(result);
+                let item_price = obj[0]['item_price'];
 
-            if($input.val()>1 && $input.val() <= 10){
-                $input.val(function(i, oldval){
-                    return --oldval;
-                });
+                if ($input.val() > 1 && $input.val() <= 10) {
+                    $input.val(function (i, oldval) {
+                        return --oldval;
+                    });
+
+                    // decrease price of the product
+                    $price.text(parseInt(item_price * $input.val()).toFixed(2));
+
+                    // set subtotal price
+                    let subtotal = parseInt($deal_price.text()) - parseInt(item_price);
+                    $deal_price.text(subtotal.toFixed(2));
+                }
+
+
             }
-
-            // decrease price of the product
-            $price.text(parseInt(item_price * $input.val()).toFixed(2));
-
-            // set subtotal price
-            let subtotal = parseInt($deal_price.text()) - parseInt(item_price);
-            $deal_price.text(subtotal.toFixed(2));
-        }}); // closing ajax request
+        }); // closing ajax request
     });
 
-    
+
 
 });
