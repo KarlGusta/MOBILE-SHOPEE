@@ -97,6 +97,7 @@ $(document).ready(function () {
                 let item_price = obj[0]['item_price'];
 
                 if ($input.val() >= 1 && $input.val() <= 9) {
+
                     $input.val(function (i, oldval) {
                         return ++oldval;
                     });
@@ -108,7 +109,6 @@ $(document).ready(function () {
                     let subtotal = parseInt($deal_price.text()) + parseInt(item_price);
                     $deal_price.text(subtotal.toFixed(2));
                 }
-
 
             }
         }); // closing ajax request
@@ -134,6 +134,7 @@ $(document).ready(function () {
                 let item_price = obj[0]['item_price'];
 
                 if ($input.val() > 1 && $input.val() <= 10) {
+
                     $input.val(function (i, oldval) {
                         return --oldval;
                     });

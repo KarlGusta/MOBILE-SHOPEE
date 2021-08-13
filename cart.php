@@ -10,6 +10,10 @@ include('header.php');
 include('Template/_cart-template.php');
 //include cart section
 
+// include wishlist section
+include('Template/_wishlist_template.php');
+// include wishlist section
+
 // include new phones section
 include('Template/_new-phones.php');
 //include new phones section
