@@ -1,4 +1,9 @@
 <?php
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if (isset($_POST['delete-wishlist-submit'])){
+        $deletedrecord = $Cart->deleteCart($_POST['item_id'], 'wishlist');
+    }
+}
 ?>
 
 <!--Wishlist Section-->
@@ -10,7 +15,7 @@
         <div class="row">
             <div class="col-sm-9">
                 <?php 
-                foreach ($product->getData('cart') as $item) :
+                foreach ($product->getData('wishlist') as $item) :
                     // to get the product using the item id
                     $wishlist = $product->getProduct($item['item_id']); 
                     array_map(function ($item){
@@ -43,11 +48,11 @@
                                 <div class="d-flex font-rale w-25">
                                     <form method="post">
                                         <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
-                                        <button type="submit" name="delete-wishlist-submit" class="btn font-baloo text-danger px-3 border-right">Delete</button>
+                                        <button type="submit" name="delete-wishlist-submit" class="btn font-baloo text-danger border-right pl-0">Delete</button>
                                     </form>
                                     <form method="post">
                                         <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
-                                        <button type="submit" name="add-wishlist-submit" class="btn font-baloo text-danger px-3">Add to Cart</button>
+                                        <button type="submit" name="add-wishlist-submit" class="btn font-baloo text-danger pl-0 pr-0">Add to Cart</button>
                                     </form>
                                 </div>
                             </div>
