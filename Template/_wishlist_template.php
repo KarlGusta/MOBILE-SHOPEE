@@ -3,6 +3,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if (isset($_POST['delete-wishlist-submit'])){
         $deletedrecord = $Cart->deleteCart($_POST['item_id'], 'wishlist');
     }
+
+    if (isset($_POST['cart-submit'])){
+        $Cart->saveForLater($_POST['item_id'], 'cart', 'wishlist');
+    }
 }
 ?>
 
@@ -52,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                                     </form>
                                     <form method="post">
                                         <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
-                                        <button type="submit" name="add-wishlist-submit" class="btn font-baloo text-danger pl-0 pr-0">Add to Cart</button>
+                                        <button type="submit" name="cart-submit" class="btn font-baloo text-danger pl-0 pr-0">Add to Cart</button>
                                     </form>
                                 </div>
                             </div>
