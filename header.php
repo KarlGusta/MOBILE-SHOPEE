@@ -48,7 +48,7 @@
 
             <div class="font-rale font-size-14">
                 <a href="#" class="px-3 border-right border-left text-dark">Login</a>
-                <a href="#" class="px-3 border-right text-dark">Wishlist (0)</a>
+                <a href="cart.php" class="px-3 border-right text-dark">Wishlist (<?php echo count($product->getData('wishlist'));?>)</a>
             </div>
         </div>
 
