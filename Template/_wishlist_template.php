@@ -49,14 +49,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                             <!--Product Qty-->
                             <div class="qty d-flex pt-2">
-                                <div class="d-flex font-rale w-25">
+                                <div class="d-flex font-rale w-30">
                                     <form method="post">
                                         <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
                                         <button type="submit" name="delete-wishlist-submit" class="btn font-baloo text-danger border-right pl-0">Delete</button>
                                     </form>
                                     <form method="post">
                                         <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
-                                        <button type="submit" name="cart-submit" class="btn font-baloo text-danger pl-0 pr-0">Add to Cart</button>
+                                        <button type="submit" name="cart-submit" class="btn font-baloo text-danger">Add to Cart</button>
                                     </form>
                                 </div>
                             </div>
