@@ -1,4 +1,13 @@
 <?php
+
+// request method post
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    if(isset($_POST['product_submit'])){
+        // call method addToCart
+        $Cart->addToCart($_POST['user_id'],$_POST['item_id']);
+    }
+}
+
     $item_id = $_GET['item_id']?? 1;
     foreach($product->getData() as $item):
         if($item['item_id'] == $item_id):
@@ -14,7 +23,18 @@
                         <button type="submit" class=" btn btn-danger form-control">Proceed to buy</button>
                     </div>
                     <div class="col">
-                        <button type="submit" class="btn btn-warning form-control">Add to Cart</button>
+                        <form method="post">
+                            <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1';?>">
+                            <input type="hidden" name="user_id" value="<?php echo 1;?>">
+                            <?php 
+                            // Check if item id is in the array in the second parameter
+                                if(in_array($item['item_id'], $Cart->getCartItemId($product->getData('cart')) ?? [])){
+                                    echo '<button type="submit" disabled class="btn btn-success form-control">In the Cart</button>';
+                                }else{
+                                    echo '<button type="submit" name="product_submit" class="btn btn-warning form-control">Add to Cart</button>';
+                                }
+                            ?>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -105,9 +125,9 @@
                         <div class="qty d-flex">
                             <h6 class="font-baloo">Qty</h6>
                             <div class="px-4 d-flex font-rale">
-                                <button class="qty-up border bg-light" data-id="prod1"><i class="fas fa-angle-up"></i></button>
-                                <input type="text" class="qty-input border px-2 w-50 bg-light" disabled value="1" placeholder="1" data-id="prod1">
-                                <button class="qty-down border bg-light" data-id="prod1"><i class="fas fa-angle-down"></i></button>
+                                <button class="qty-up border bg-light" data-id="<?php echo $item['item_id'] ?? 0; ?>"><i class="fas fa-angle-up"></i></button>
+                                <input type="text" class="qty-input border px-2 w-50 bg-light" disabled value="1" placeholder="1" data-id="<?php echo $item['item_id'] ?? 0; ?>">
+                                <button class="qty-down border bg-light" data-id="<?php echo $item['item_id'] ?? 0; ?>"><i class="fas fa-angle-down"></i></button>
                             </div>
                         </div>
                         <!--!Product Quantity Section-->
