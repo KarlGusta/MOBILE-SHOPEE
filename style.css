@@ -7,6 +7,10 @@ button:focus {
   box-shadow: none !important;
 }
 
+body{
+  background-color: #f3f2ef;
+}
+
 /* Typography classes */
 .font-baloo {
   font-family: "Baloo Chettan 2", cursive;
@@ -105,5 +109,8 @@ button:focus {
   margin-right: 1.2rem;
   margin-top: 1rem;
 }
+
+/* Login Section */
+
 
 /*# sourceMappingURL=style.css.map */

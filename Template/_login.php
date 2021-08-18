@@ -24,29 +24,17 @@
 
 <body>
 
-    <section id="login" class="py-3">
-        <div class="container-fluid w-25">
-            <div class="row border-top py-3 mt-3">
-                <div class="col-sm-3">
-                    <p class="font-baloo font-size-20">Welcome to Mobile Shopee</p>
-                </div>
-                <div class="col-sm-9">
-                    <form>
-                        <div class="form-group">
-                            <label for="userName" class="font-baloo font-size-20">User name</label>
-                            <input type="text" class="form-control" id="user_name" aria-describedby="username" placeholder="Enter username">
-                        </div>
-                        <div class="form-group">
-                            <label for="userPassword" class="font-baloo font-size-20">Password</label>
-                            <input type="password" class="form-control" id="user_password" placeholder="Password">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-            </div>
-
+    <section id="login-page">
+        <div class="login">
+            <h1>Login</h1>
+            <form method="post">
+                <label for="username"><i class="fas fa-user"></i></label>
+                <input type="text" name="username" placeholder="Username" id="username" required>
+                <label for="password"><i class="fas fa-lock"></i></label>
+                <input type="password" name="password" placeholder="Password" id="password" required>
+                <input type="submit" value="Login">
+            </form>
         </div>
-
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
