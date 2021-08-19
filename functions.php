@@ -10,6 +10,9 @@ require('Database/Product.php');
 // required cart class
 require('Database/Cart.php');
 
+// required login class
+require('Database/Login.php');
+
 // DBController object
 $db = new DBController();
 
@@ -20,4 +23,5 @@ $product_shuffle = $product->getData();
 // Cart object
 $Cart = new Cart($db);
 
-
+// Login object
+$Login = new Login($db);
