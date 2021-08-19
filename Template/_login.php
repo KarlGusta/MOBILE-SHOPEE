@@ -25,7 +25,7 @@
 <body>
 
     <section id="login-page">
-        <div class="login">
+        <div class="login font-baloo">
             <h1>Login</h1>
             <form method="post">
                 <label for="username"><i class="fas fa-user"></i></label>
