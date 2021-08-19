@@ -111,6 +111,45 @@ body{
 }
 
 /* Login Section */
+.login{
+  width: 400px;
+  background-color: #ffffff;
+  box-shadow: 0 0 9px 0 rgba(0,0,0,0.3); /*Makes it look like its poping out*/
+  margin: 100px auto; /*Centers the div*/
+}
+
+.login h1{
+  text-align: center;
+  color: #5b6574;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #dee0e4;
+}
+
+.login form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.login form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #3274d6;
+  color: #ffffff;
+}
+
+.login form input[type="password"], .login form input[type="text"]{
+  width: 310px;
+  height: 50px;
+  border: 1px solid #dee0e4;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
 
 
 /*# sourceMappingURL=style.css.map */
