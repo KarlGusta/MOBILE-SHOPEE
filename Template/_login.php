@@ -39,11 +39,11 @@
         <div class="login font-baloo">
             <h1>Login</h1>
             <form method="post">
-                <label for="username"><i class="fas fa-user"></i></label>
+                <label for="username" class="color-secondary-bg"><i class="fas fa-user"></i></label>
                 <input type="text" name="username" placeholder="Username" id="username" required>
-                <label for="password"><i class="fas fa-lock"></i></label>
+                <label for="password" class="color-secondary-bg"><i class="fas fa-lock"></i></label>
                 <input type="password" name="password" placeholder="Password" id="password" required>
-                <button type="submit">Login</button>
+                <button type="submit" class="color-secondary-bg">Login</button>
             </form>
         </div>
     </section>
