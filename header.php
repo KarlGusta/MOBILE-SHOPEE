@@ -35,7 +35,7 @@
     ?>	
 
 <?php 
-// Check if logged in
+// Check if logged in so that user can access the pages
 // We need to use sessions, so you should always start sessions using the below code. 
 session_start();
 // If the user is not logged in redirect to the login page ... 
@@ -57,7 +57,7 @@ if (!isset($_SESSION['loggedin'])){
             </p>
 
             <div class="font-rale font-size-14">
-                <a href="#" class="px-3 border-right border-left text-dark">Login</a>
+                <a href="Login.php" class="px-3 border-right border-left text-dark">Login</a>
                 <a href="cart.php" class="px-3 border-right text-dark">Wishlist (<?php echo count($product->getData('wishlist'));?>)</a>
             </div>
         </div>
