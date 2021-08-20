@@ -16,29 +16,15 @@
     <!--Custom CSS-->
     <link rel="stylesheet" href="style.css">
 
-    <?php
-    // require functions.php file
-    require('functions.php');
-    ?>
 </head>
 
 <body>
 
-<?php 
-
-    // request method post
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
-        // Now we check if the data from the login form was submitted, isset() will check if the data exists. 
-        if(!isset($_POST['username'], $_POST['password'])){
-            // Could not get the data that should have been sent.
-            exit('Please fill both the username and password fields!');
-        }
-    }
-?>
+<!--The Login section-->
     <section id="login-page">
         <div class="login font-baloo">
             <h1>Login</h1>
-            <form method="post">
+            <form action="authenticate.php" method="post">
                 <label for="username" class="color-secondary-bg"><i class="fas fa-user"></i></label>
                 <input type="text" name="username" placeholder="Username" id="username" required>
                 <label for="password" class="color-secondary-bg"><i class="fas fa-lock"></i></label>
@@ -47,6 +33,7 @@
             </form>
         </div>
     </section>
+    <!--!The Login Section-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
