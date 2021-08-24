@@ -1,5 +1,6 @@
 <?php 
 
+
     shuffle($product_shuffle); // This shuffles the array to give random values
 
     // request method post
@@ -36,7 +37,7 @@
                         </div>
                         <form method="post">
                             <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
-                            <input type="hidden" name="user_id" value="<?php echo 1;?>">
+                            <input type="hidden" name="user_id" value="<?=$_SESSION['id']?>">
                             <?php 
                             //Check if item id is in the array in the second parameter
                                 if(in_array($item['item_id'], $Cart->getCartItemId($product->getData('cart')) ?? [])){

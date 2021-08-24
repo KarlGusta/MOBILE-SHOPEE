@@ -59,6 +59,7 @@ session_start();
             <div class="font-rale font-size-14">
                 <a href="login.php" class="px-3 border-right border-left text-dark"><?php echo (!isset($_SESSION['loggedin'])) ? 'Login' :  'Logout';?></a>
                 <a href="cart.php" class="px-3 border-right text-dark">Wishlist (<?php echo count($product->getData('wishlist'));?>)</a>
+                <a href="cart.php" class="px-3 border-right text-dark">Welcome <?=$_SESSION['name']?></a>
             </div>
         </div>
 
