@@ -1,4 +1,6 @@
 <?php
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['delete-cart-submit'])) {
         $deletedrecord = $Cart->deleteCart($_POST['item_id']);
@@ -21,6 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="col-sm-9">
                 <?php
                 foreach ($product->getData('cart') as $item) :
+                    // To get items to show in cart according to the user logged in.
+                    if($_SESSION['id'] == $item['user_id']){
                     // to get the product using the item id
                     $cart = $product->getProduct($item['item_id']);
                     $subTotal[] = array_map(function ($item) {
@@ -79,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!--!Cart item-->
                 <?php
                         return $item['item_price'];
-                    }, $cart); // closing array_map function   
+                    }, $cart);} // closing array_map function   
                 endforeach;
                 ?>
             </div>

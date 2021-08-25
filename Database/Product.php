@@ -25,7 +25,7 @@ class Product {
         return $resultArray;
     }
 
-    // get product using item id // This method was first used to get data for the cart table
+    // get product using item id // This method was first used to get data for the cart table. It will also get according to the SESSION id.
     public function getProduct($item_id = null, $table = 'product'){
         if(isset($item_id)){
             $result = $this->db->con->query("SELECT * FROM {$table} WHERE item_id={$item_id}");
