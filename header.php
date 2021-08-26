@@ -8,42 +8,34 @@
     <title>Mobile Shopee</title>
 
     <!--Bootstrap CDN-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <!-- Owl Carousel CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
 
     <!--Font awesome icons-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
     <!--Custom CSS-->
     <link rel="stylesheet" href="style.css">
-    
-    <?php     
+
+    <?php
     // require functions.php file
     require('functions.php');
-    ?>	
+    ?>
 
-<?php 
-// Check if logged in so that user can access the pages
-// We need to use sessions, so you should always start sessions using the below code. 
-session_start();
-// If the user is not logged in redirect to the login page ... 
-//if (!isset($_SESSION['loggedin'])){
- //   header('Location: index.html');
-  //  exit;
-//}
-?>
+    <?php
+    // Check if logged in so that user can access the pages
+    // We need to use sessions, so you should always start sessions using the below code. 
+    session_start();
+    // If the user is not logged in redirect to the login page ... 
+    //if (!isset($_SESSION['loggedin'])){
+    //   header('Location: index.html');
+    //  exit;
+    //}
+    ?>
 
 </head>
 
@@ -57,9 +49,18 @@ session_start();
             </p>
 
             <div class="font-rale font-size-14">
-                <a href="login.php" class="px-3 border-right border-left text-dark"><?php echo (!isset($_SESSION['loggedin'])) ? 'Login' :  'Logout';?></a>
-                <a href="cart.php" class="px-3 border-right text-dark">Wishlist (<?php echo count($product->getData('wishlist'));?>)</a>
-                <a href="cart.php" class="px-3 border-right text-dark">Welcome <?=$_SESSION['name']?></a>
+                <a href="login.php" class="px-3 border-right border-left text-dark"><?php echo (!isset($_SESSION['loggedin'])) ? 'Login' :  'Logout'; ?></a>
+                <a href="cart.php" class="px-3 border-right text-dark">Wishlist (
+                    <?php
+                        $itemcount = 0;
+                        foreach ($product->getData('wishlist') as $item){
+                            if ($_SESSION['id'] == $item['user_id']){
+                                $itemcount += 1;
+                            }
+                        }
+                        echo $itemcount; // end foreach
+                    ?>)</a>
+                <a href="cart.php" class="px-3 border-right text-dark">Welcome <?= $_SESSION['name'] ?></a>
             </div>
         </div>
 
@@ -67,8 +68,7 @@ session_start();
         <nav class="navbar navbar-expand-lg navbar-dark color-secondary-bg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">Mobile Shopee</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -84,7 +84,17 @@ session_start();
                 <form action="#" class="font-size-14 font-rale">
                     <a href="cart.php" class="py-2 rounded-pill color-primary-bg">
                         <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
-                        <span class="px-3 py-2 rounded-pill text-dark bg-light"><?php echo count($product->getData('cart'));?></span>
+                        <span class="px-3 py-2 rounded-pill text-dark bg-light">
+                            <?php
+                            // To loop through and echo the number of items in the cart for the current user
+                            $itemcount = 0;
+                            foreach ($product->getData('cart') as $item) {
+                                if ($_SESSION['id'] == $item['user_id']) {
+                                    $itemcount +=  1;
+                                }
+                            }
+                            echo $itemcount; //end foreach
+                            ?></span>
                     </a>
                 </form>
             </div>

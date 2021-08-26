@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!--!Cart item-->
                 <?php
                         return $item['item_price'];
-                    }, $cart);} // closing array_map function   
+                    }, $cart);} // closing array_map function and if function
                 endforeach;
                 ?>
             </div>
