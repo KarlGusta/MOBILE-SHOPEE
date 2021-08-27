@@ -25,6 +25,20 @@ class Product {
         return $resultArray;
     }
 
+    // Fetch cart data according to the user using the getDataCart method
+    public function getCartDataUsingUserId($table = 'cart'){
+        $result = $this->db->con->query("SELECT * FROM {$table} WHERE user_id={$_SESSION['id']}");
+
+        $resultArray = array();
+
+        // Fetch product data one by one 
+        while( $item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            $resultArray[] = $item;
+        }
+
+        return $resultArray;
+    }
+
     // get product using item id // This method was first used to get data for the cart table. It will also get according to the SESSION id.
     public function getProduct($item_id = null, $table = 'product'){
         if(isset($item_id)){

@@ -22,9 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="row">
             <div class="col-sm-9">
                 <?php
-                foreach ($product->getData('cart') as $item) :
-                    // To get items to show in cart according to the user logged in.
-                    if($_SESSION['id'] == $item['user_id']){
+                foreach ($product->getCartDataUsingUserId('cart') as $item) :
+                    // To get items to SHOW in cart according to the user logged in.
+                   // if($_SESSION['id'] == $item['user_id']){
                     // to get the product using the item id
                     $cart = $product->getProduct($item['item_id']);
                     $subTotal[] = array_map(function ($item) {
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!--!Cart item-->
                 <?php
                         return $item['item_price'];
-                    }, $cart);} // closing array_map function and if function
+                    }, $cart);//} // closing array_map function and if function
                 endforeach;
                 ?>
             </div>
