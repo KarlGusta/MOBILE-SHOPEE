@@ -49,7 +49,7 @@
             </p>
 
             <div class="font-rale font-size-14">
-                <a href="login.php" class="px-3 border-right border-left text-dark"><?php echo (isset($_SESSION['loggedin'])) ? 'Logout' :  'Login'; ?></a>
+                <a href="logout.php" class="px-3 border-right border-left text-dark"><?php echo (isset($_SESSION['loggedin'])) ? 'Logout' :  'Login'; ?></a>
                 <a href="cart.php" class="px-3 border-right text-dark">Wishlist (
                     <?php
                         $itemcount = 0;

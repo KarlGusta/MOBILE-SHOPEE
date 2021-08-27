@@ -43,18 +43,15 @@ $stmt->close();
 </head>
 
 <body class="loggedin">
-    <nav class="navtop">
-        <div>
-            <h1>Website Title</h1>
-            <a href="profile.php"><i class="fas fa-user-cirle">Profile</i></a>
-            <a href="logout.php"><i class="fas fa-sign-out-alt">Logout</i></a>
-        </div>
-    </nav>
-    <div class="content">
-        <h2>Profile Page</h2>
-        <div>
-            <p>Your account details are below:</p>
-            <table>
+
+<section id="profile-page">
+    <div class="container py-5">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+        <h2 class="font-baloo">Profile</h2>
+        <img class="card-img-top" alt="Profile Picture" src="assets/images/profile-pic.png">
+            <h5 class="card-title font-baloo">Your account details are below:</h5>
+            <table class="font-baloo">
                 <tr>
                     <td>Username:</td>
                     <td><?= $_SESSION['name'] ?></td>
@@ -68,17 +65,16 @@ $stmt->close();
                     <td><?= $email ?></td>
                 </tr>
             </table>
+            <div>
+                <a href="index.php"><i class="fas fa-sign-out-alt btn-link font-baloo">Home Page</i></a>
+                <a href="logout.php"><i class="fas fa-sign-out-alt btn btn-danger font-baloo">Logout</i></a>
+            </div>
         </div>
+    </div>      
     </div>
 
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" alt="Profile Picture" src="assets/images/profile-pic.png">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
+</section>
+
 
     <!--Optional JavaScript-->
     <!--jQuery first, then Popper.js, then Boostrap JS-->
